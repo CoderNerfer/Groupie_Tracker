@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/artistestyle.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>Groupie tracker - Artiste</title>
+</head>
+<body>
+    <!-- Navigation BAR -->
+    <nav class="navbar">
+        <div class="inner-width">
+            <a href="/" class="logo">Groupie Tracker</a>
+            
+            <form action="/Artiste" method="post">
+               
+                <input list="choixafaire" type="text" name="nameChoice" id="" placeholder="Recherche?" autocomplete="off" class="nameinput" value="">
+                <datalist id = "choixafaire">
+                    {{range .Autocomplete}}
+                        <option>{{.}}</option>
+                    {{end}}
+                </datalist>
+                <button type="submit" class="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+            
+            <div class="navbar-menu">
+                <a href="/">Home</a>
+                <a href="/Artiste">Artiste</a>
+                <a href="/Concert">Concert</a>
+                <a href="/Filtre">Filtre</a>
+            </div>
+            
+        </div>   
+    </nav>
+    <!-- artiste section -->
+    <section id="artiste">
+        <div class="inner-width">
+            <div class="group">
+                {{range .Display}}
+                    <div class="membre">
+                        <div class="image">
+                            <img src="{{.Image}}" alt="">
+                            <h1>{{.Name}} ~ {{.CreationDate}}</h1>
+                        </div>
+                        <div class="info">
+                            <h2>Membre(s)</h2>
+                            {{range .Members}}
+                                <p>{{.}}</p>
+                            {{end}}
+                            <h2 class="album">Premier album</h2>
+                            <p>{{.FirstAlbum}}</p>
+                            <h2>{{.Title}}</h2>
+                            
+                            {{if ne .Preview "p"}}
+                            <audio controls>
+
+                                <source src="{{.Preview}}" type="audio/mpeg">
+                            
+                            </audio>
+                            {{end}}
+                            
+                            
+                        </div>   
+                    </div>
+                {{end}}
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="inner-width">
+            <div class="copyright">
+                &copy; 2020-2021 | Created & Designed By <a href="#">Mathis - Amaury - Guillaume - Clément</a> 
+            </div>
+            <div>
+                <i class="fab fa-angrycreative" class="coolfinish"></i>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+<!-- {{/*
+    eq Returns the boolean truth of arg1 == arg2
+    ne Returns the boolean truth of arg1 != arg2
+    lt Returns the boolean truth of arg1 <  arg2
+    le Returns the boolean truth of arg1 <= arg2
+    gt Returns the boolean truth of arg1 >  arg2
+    ge Returns the boolean truth of arg1 >= arg2
+*/}}
+
+<p>eq .Language "French" {{eq .Language "French"}}</p>
+<p>eq .Language "Neptunian" {{eq .Language "Neptunian"}}</p>
+
+{{if eq .Language "French"}}
+    <p>Bonjour {{.Name}}</p>
+{{else if eq .Language "Neptunian"}}
+    <p>?????? {{.Name}}</p>
+{{else}}
+    <h1>Who are you ?, {{.Name}}</h1>
+{{end}} -->

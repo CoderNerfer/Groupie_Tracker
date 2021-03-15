@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+
+}
+html{
+    min-width: 200px;
+    min-height: 200px;
+}
+::selection{
+    background-color:#E83151;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+    background-color: #FDFFFC;
+
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #3A1772;
+}
+body{
+    background-color: #FDFFFC;
+    font-family: 'Big Shoulders Display', cursive;
+}
+
+#Notfound{
+    height: 100vh;
+    justify-content: center;
+    text-align: center;
+}
+
+.navbar{
+    background-color: #3A1772;
+    width: 100%;
+    padding: 10px 0;  
+}
+.inner-width{
+    max-width: 1800px;
+    margin: auto;
+    padding: 0 40px;
+}
+.navbar .inner-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    font-size: 35px;
+    font-family: 'Dancing Script', cursive;
+    color: #FDFFFC;
+}
+.navbar-menu{
+    font-size: 20px;
+}
+.navbar-menu a{
+    padding: 10px;
+    color: #FDFFFC;
+}
+.message{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    
+}
+
+.message p{
+    font-size: 115px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+
+footer{
+    position: absolute;
+    bottom: 0;
+    background-color: #3A1772;
+    color: #FDFFFC;
+    padding: 30px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.copyright{
+    font-size: 18px;
+}
+
+.copyright a{
+    font-size: 18px;
+    color: #CB9CF2;
+    font-weight: 500;
+}
+
+footer .fab{
+    font-size: 70px;
+}
+
+@media screen and (max-width: 1300px){
+    .message p{
+        font-size: 75px;
+    }
+
+}
+@media screen and (max-width: 700px){
+    .message p{
+        font-size: 40px;
+    }
+
+}

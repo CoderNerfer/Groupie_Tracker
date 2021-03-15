@@ -1,0 +1,286 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+
+}
+html{
+    min-width: 200px;
+    min-height: 200px;
+}
+::selection{
+    background-color:#E83151;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+    background-color: #FDFFFC;
+
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #3A1772;
+}
+body{
+    background-color: #FDFFFC;
+    font-family: 'Big Shoulders Display', cursive;
+}
+.navbar{
+    position: fixed;
+    background-color: #3A1772;
+    width: 100%;
+    padding: 10px 0;
+    top: 0;   
+    z-index: 9999;
+}
+.inner-width{
+    max-width: 1800px;
+    margin: auto;
+    padding: 0 40px;
+}
+.navbar .inner-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    font-size: 35px;
+    font-family: 'Dancing Script', cursive;
+    color: #FDFFFC;
+}
+.navbar-menu{
+    font-size: 20px;
+}
+.navbar-menu a{
+    padding: 10px;
+    color: #FDFFFC;
+}
+#Display{
+    margin-top: 60px;
+    display: flex;
+}
+.filtre{
+    height: 100%;
+    width: 250px;   
+    background: #FDFFFC;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* margin-bottom: 20px; */
+}
+
+.form{
+    margin-top: 20px;
+    /* background: red; */
+}
+.sumbit{
+    padding-top: 50px;
+}
+.sumbit input{
+    border: none;
+    outline: none;
+    background: #3A1772;
+    background-color: none;
+    color: #FDFFFC;
+    padding: 10px;
+    border-radius: 10px;
+}
+.Container{
+    margin-top: 20px;
+}
+.Container label{
+    color: #3A1772;
+    font-size: 20px;
+}
+.Container input{
+    text-align: center;
+    border: none;
+    padding: 5px 0px;
+    outline: none;
+    background: #3A1772;
+    border-radius: 5px;
+    color: #FDFFFC;
+    /* background-color: red; */
+}
+.Container input::-webkit-calendar-picker-indicator{
+    filter: invert(1);
+}
+.Container input::placeholder{
+    color: #FDFFFC;
+}
+.inputrange{
+    margin-bottom: 10px;
+}
+.inputrange{
+    -webkit-appearance: none;
+    height: 5px;
+    width: 150px;
+    background: #3A1772;
+    outline: none;
+    border: none;
+}
+.inputrange::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    background:#CB9CF2;
+    border-radius: 50%;
+}
+.number{
+    display: none;
+}
+.membre{
+    color: #3A1772;
+    font-size: 20px;
+}
+.form output{
+    font-size: 25px;
+    color: #3A1772;
+}
+.country{
+    margin-top: 20px;
+    display: block;
+    color: #3A1772;
+    font-size: 20px;
+}
+.country input:checked + label{
+    color: #CB9CF2;
+}
+
+.display{
+    /* background-color: khaki; */
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+
+}
+.map{
+    /* background-color:red; */
+    width: 100%;
+    height: 100vh;
+}
+.artisdisplay{
+    margin-left: 10px;
+    /* background-color: rosybrown; */
+    /* width: 100%;
+    height: 100%; */
+}
+
+
+.groupe{
+    background: #3A1772;
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+    /* height: 100%; */
+    width: 500px;
+    color: #FDFFFC;
+}
+
+.image img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+.image h2{
+    padding-top: 15px;
+    text-align: center;
+    color: #CB9CF2;
+}
+
+.concertlocation{
+    display: flex;
+    flex-wrap: wrap;
+}
+.location{
+    margin: 5px;
+    text-align: center;
+    padding: 10px;
+    width: 200px;
+}
+.location h3{
+    color: #CB9CF2;
+}
+
+.audio{
+    display: none;
+}
+
+
+
+
+
+
+footer{
+    background-color: #3A1772;
+    color: #FDFFFC;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.copyright{
+    font-size: 18px;
+}
+
+.copyright a{
+    font-size: 18px;
+    color: #CB9CF2;
+    font-weight: 500;
+}
+
+footer .fab{
+    font-size: 70px;
+}
+
+
+@media screen and (max-width: 1300px){
+    .display{
+        flex-wrap: wrap;
+    }
+    .map{
+        height: 300px;
+        margin-bottom: 20px;
+    }
+    .artisdisplay{
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+       
+    }
+    .groupe{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        display: block;
+        justify-content: center;
+    }
+    .location{
+        width: 100%;
+    }
+
+    
+    
+}
+
+@media screen and (max-width: 800px){
+    .display{
+        margin-top: 50px;
+    }
+    .groupe{
+        width: 100%;
+        margin: 20px 0px 0px 0px ;
+        padding: 10px 0px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        display: block;
+        justify-content: center;
+    }
+
+}
+
+
+

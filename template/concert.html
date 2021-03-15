@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/concertstyle.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <title>Groupie tracker - Concert</title>
+</head>
+<body>
+    <!-- Navigation BAR -->
+    <nav class="navbar">
+        <div class="inner-width">
+            <a href="/" class="logo">Groupie Tracker</a>
+            <div class="navbar-menu">
+                <a href="/">Home</a>
+                <a href="/Artiste">Artiste</a>
+                <a href="/Concert">Concert</a>
+                <a href="/Filtre">Filtre</a>
+            </div>
+        </div>       
+    </nav>
+
+
+    <!-- artiste section -->
+    <section id="artiste">
+        <div class="inner-width">
+            <div class="group">
+                <!-- range -->
+                {{range .Display}}
+                    <div class="membre">
+                        <h1>{{.Name}}</h1>
+                            {{range $key, $value := .DatesLocations}}
+                                <h2>{{$key}}</h2>
+                                {{range $value}}
+                                    <p>{{.}}</p> 
+                                {{end}}
+                            {{end}}
+                            
+                    </div> 
+                {{end}}         
+            </div>
+            <div class="audio">
+                <h2>{{.Title}}</h2>
+                <audio controls>
+                    <source src="{{.Preview}}" type="audio/mpeg">   
+                </audio>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="inner-width">
+            <div class="copyright">
+                &copy; 2020-2021 | Created & Designed By <a href="#">Mathis - Amaury - Guillaume - Clément</a> 
+            </div>
+            <div>
+                <i class="fab fa-angrycreative" class="coolfinish"></i>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
