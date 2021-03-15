@@ -123,8 +123,15 @@ func main() {
 	http.HandleFunc("/Artiste", ArtisteHandler)
 	http.HandleFunc("/Concert", ConcertHandler)
 	http.HandleFunc("/Filtre", FiltreHandler)
+	http.HandleFunc("/mentions_legales", getMentionLegaleHandler)
 	http.Handle("/style/", http.FileServer(http.Dir(".")))
 	http.ListenAndServe(":"+port, nil)
+}
+
+func getMentionLegaleHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("In Mentions Legales")
+
+	tpl.ExecuteTemplate(w, "mentions_legales.html", nil)
 }
 
 // getFormeHandler permet deux choses

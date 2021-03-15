@@ -32,7 +32,6 @@
     <section id="artiste">
         <div class="inner-width">
             <div class="group">
-                <!-- range -->
                 {{range .Display}}
                     <div class="membre">
                         <h1>{{.Name}}</h1>
@@ -46,12 +45,6 @@
                     </div> 
                 {{end}}         
             </div>
-            <div class="audio">
-                <h2>{{.Title}}</h2>
-                <audio controls>
-                    <source src="{{.Preview}}" type="audio/mpeg">   
-                </audio>
-            </div>
         </div>
     </section>
 
@@ -60,7 +53,7 @@
     <footer>
         <div class="inner-width">
             <div class="copyright">
-                &copy; 2020-2021 | Created & Designed By <a href="#">Mathis - Amaury - Guillaume - Clément</a> 
+                &copy; 2020-2021 | Created & Designed By <a href="#">Mathis - Amaury - Guillaume - Clément</a> // <a href="mentions_legales" target="_blank" class="mentions_legales"> Mentions Légales</a>
             </div>
             <div>
                 <i class="fab fa-angrycreative" class="coolfinish"></i>
